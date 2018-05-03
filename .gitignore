@@ -1,1 +1,4 @@
 chat/
+***/tmp/
+*.gz
+.idea

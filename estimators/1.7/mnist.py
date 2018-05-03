@@ -23,6 +23,7 @@ import tensorflow as tf
 tf.logging.set_verbosity(tf.logging.INFO)
 
 dir_path="./tmp/model"
+
 def cnn_model_fn(features, labels, mode):
     """Model function for CNN."""
     # Input Layer
@@ -121,8 +122,8 @@ def main(unused_argv):
     mnist = tf.contrib.learn.datasets.load_dataset("mnist")
     train_data = mnist.train.images  # Returns np.array
     train_labels = np.asarray(mnist.train.labels, dtype=np.int32)
-    eval_data = mnist.test.images  # Returns np.array
-    eval_labels = np.asarray(mnist.test.labels, dtype=np.int32)
+    
+    print(tf.shape(train_data))
 
     # Create the Estimator
     mnist_classifier = tf.estimator.Estimator(
@@ -146,19 +147,11 @@ def main(unused_argv):
         steps=1,
         hooks=[logging_hook])
 
-    # Evaluate the model and print results
-    eval_input_fn = tf.estimator.inputs.numpy_input_fn(
-        x={"x": eval_data},
-        y=eval_labels,
-        num_epochs=1,
-        shuffle=False)
-    #eval_results = mnist_classifier.evaluate(input_fn=eval_input_fn)
-    #mnist_classifier.export_savedmodel(dir_path, serving_input_receiver_fn)
     x = tf.feature_column.numeric_column("x")
     feature_columns = [x]
     feature_spec = tf.feature_column.make_parse_example_spec(feature_columns)
     export_input_fn = tf.estimator.export.build_parsing_serving_input_receiver_fn(feature_spec)
-    mnist_classifier.export_savedmodel('exports', export_input_fn)
+    #mnist_classifier.export_savedmodel(dir_path, export_input_fn)
 
 if __name__ == "__main__":
     tf.app.run()
