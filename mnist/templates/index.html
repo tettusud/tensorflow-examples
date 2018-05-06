@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <script src="main.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="main.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                <canvas id="can" width="280" height="280" class="drawing-canvas z-depth-3"></canvas>
+            </div>
+            <div class="col s12 m6">
+                <img id="canvasimg" class="">
+            </div>
+            <div class="col s12 m6">
+                    <div class="chip">
+                            <span id="class_predicted"></span>
+                      </div>
+                                
+            </div>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn" onclick="erase()">Clear</a>
+            <a class="waves-effect waves-light btn" onclick="save()">save</a>
+            <a class="waves-effect waves-light btn" onclick="predict_v2()">Predict</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
