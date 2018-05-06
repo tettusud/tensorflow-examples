@@ -1,13 +1,13 @@
-##Mnist with your own data
+## Mnist with your own data
 
   This code uses keras to load your handwritten characters and trains them
   
-  ##TRAINING
+  ### TRAINING
    To train , run te tmnist.ipynb
   
-  ## Server
+  ### Server
    To start server and predict  
+   
    ```
     python server.py
    ```
-   
