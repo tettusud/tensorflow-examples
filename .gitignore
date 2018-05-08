@@ -3,3 +3,4 @@ chat/
 *.gz
 .idea
 **/images/**
+logs

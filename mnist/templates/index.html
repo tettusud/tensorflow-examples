@@ -13,24 +13,31 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <canvas id="can" width="280" height="280" class="drawing-canvas z-depth-3"></canvas>
-            </div>
-            <div class="col s12 m6">
-                <img id="canvasimg" class="">
-            </div>
-            <div class="col s12 m6">
-                    <div class="chip">
-                            <span id="class_predicted"></span>
-                      </div>
-                                
-            </div>
+                <div class="row">
+                    <div class="col s12">
+                        <canvas id="can" width="280" height="280" class="drawing-canvas z-depth-3"></canvas>
+                    </div>
+                    <div class="col s12 m8">
+                        <div class="collection">
+                            <a href="#!" class="collection-item">
+                                <span class="badge">
+                                    <span id="class_predicted"></span>
+                                </span>Prediction</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12">
+                            <a class="waves-effect waves-light btn" onclick="erase()">Clear</a>
+                            <a class="waves-effect waves-light btn" onclick="save()">save</a>
+                            <a class="waves-effect waves-light btn" onclick="predict_v2()">Predict</a>
+                        </div>
+
+                </div>
+                <div class="col s12 m6">
+                    <img id="canvasimg" class="">
+                </div>                
+            </div>           
         </div>
-        <div class="row">
-            <a class="waves-effect waves-light btn" onclick="erase()">Clear</a>
-            <a class="waves-effect waves-light btn" onclick="save()">save</a>
-            <a class="waves-effect waves-light btn" onclick="predict_v2()">Predict</a>
-        </div>
-    </div>
 
 </body>
 
